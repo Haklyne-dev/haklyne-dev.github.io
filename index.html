@@ -3,11 +3,50 @@
     <head>
         <title>Home | Haklyne Development</title>
         <style>
-
+            body {
+                font-family: Arial, sans-serif;
+                padding: 0;
+                margin: 0;
+            }
+            #top {
+                background-color: #000;
+                padding: 2.5vh;
+                height: 40vh;
+                left: 0;
+                top: 0;
+                margin: 0;
+            }
+            #logo {
+                height: 35vh;
+                width: 35vh;
+                float: left;
+            }
+            #name {
+                font-size: 15vh;
+                font-weight: bold;
+                color: #2dd2b0;
+                position: absolute;
+            }
         </style>
     </head>
     <body>
-        <h1>Welcome to Haklyne Development</h1>
+        <div id="top">
+            <img src="logo.png" alt="Haklyne Development Logo" id="logo" />
+            <span id="name">Haklyne<br>Development</span>
+        </div>
         <p>Our website is currently under construction. Please check back later.</p>
     </body>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const nameElement = document.getElementById("name");
+        nameElement.style.opacity = 0;
+        nameElement.style.transition = "2s";
+        nameElement.style.transform = "translateX(-1vw)";
+
+        setTimeout(() => {
+            nameElement.style.opacity = 1;
+            nameElement.style.transform = "translateX(0)";
+        }, 100);
+    });
+</script>
 </html>
