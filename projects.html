@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home | Haklyne Development</title>
+        <title>Projects | Haklyne Development</title>
         <link rel="icon" href="favicon.png" type="image/x-icon">
         <style>
             body {
@@ -79,7 +79,7 @@
         </div>
         <div id="top">
             <img src="logo.png" alt="Haklyne Development Logo" id="logo" />
-            <span id="name">Haklyne<br>Development</span>
+            <span id="name">Projects</span>
         </div>
         
     </body>
@@ -95,5 +95,39 @@
                 nameElement.style.transform = "translateX(0)";
             }, 100);
         });
+        fetch("https://api.github.com/orgs/haklyne-dev/repos")
+            .then(response => response.json())
+            .then(repos => {
+            const contentDiv = document.createElement("div");
+            contentDiv.className = "content";
+            
+            repos.forEach(repo => {
+                const repoDiv = document.createElement("div");
+                repoDiv.style.marginBottom = "20px";
+
+                const repoName = document.createElement("h1");
+                repoName.textContent = repo.name;
+                repoName.style.color = "#3de2c0";
+
+                const repoDescription = document.createElement("p");
+                repoDescription.textContent = repo.description || "No description available.";
+                repoDescription.style.color = "#fff";
+
+                const repoLink = document.createElement("a");
+                repoLink.href = repo.html_url;
+                repoLink.target = "_blank";
+                repoLink.textContent = "View Repository";
+                repoLink.style.color = "#2dd2b0";
+                repoLink.style.textDecoration = "none";
+
+                repoDiv.appendChild(repoName);
+                repoDiv.appendChild(repoDescription);
+                repoDiv.appendChild(repoLink);
+                contentDiv.appendChild(repoDiv);
+            });
+
+            document.body.appendChild(contentDiv);
+            })
+            .catch(error => console.error("Error fetching repositories:", error));
     </script>
 </html>

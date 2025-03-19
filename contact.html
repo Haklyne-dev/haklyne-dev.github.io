@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home | Haklyne Development</title>
+        <title>Contact | Haklyne Development</title>
         <link rel="icon" href="favicon.png" type="image/x-icon">
         <style>
             body {
@@ -66,6 +66,38 @@
                 margin-right: 10px;
                 color: #DDD;
             }
+            #pname {
+                width: 80%;
+                background-color: #000;
+                color: #FFF;
+            }
+            #email {
+                width: 80%;
+                background-color: #000;
+                color: #FFF;
+            }
+            #message {
+                width: 80%;
+                height: 20vh;
+                background-color: #000;
+                color: #FFF;
+            }
+            button {
+                background-color: #111;
+                color: #FFF;
+                border: none;
+                padding: 10px;
+                margin-top: 10px;
+                cursor: pointer;
+                transition: 0.5s;
+            }
+            button:hover {
+                background-color: #2dd2b0;
+            }
+            .lbl {
+                font-size: 3vh;
+                color: #2dd2b0;
+            }
         </style>
     </head>
     <body>
@@ -79,9 +111,23 @@
         </div>
         <div id="top">
             <img src="logo.png" alt="Haklyne Development Logo" id="logo" />
-            <span id="name">Haklyne<br>Development</span>
+            <span id="name">Contact</span>
         </div>
-        
+        <form class="content" action="mailto:haklynedev@gmail.com" method="post" enctype="text/plain">
+            <label for="name" class="lbl">Name:</label><br>
+            <input type="text" id="pname" name="name" required>
+            <br>
+            
+            <label for="email" class="lbl">Email Address:</label><br>
+            <input type="email" id="email" name="email" required>
+            <br>
+            
+            <label for="message" class="lbl">Message:</label><br>
+            <textarea id="message" name="message" required></textarea>
+            <br>
+            
+            <button type="submit">Send</button>
+        </form>
     </body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {

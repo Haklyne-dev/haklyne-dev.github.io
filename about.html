@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Home | Haklyne Development</title>
+        <title>About | Haklyne Development</title>
         <link rel="icon" href="favicon.png" type="image/x-icon">
         <style>
             body {
@@ -66,6 +66,21 @@
                 margin-right: 10px;
                 color: #DDD;
             }
+            #paragraph {
+                font-size: 2vh;
+                width: 80vw;
+                color: #FFF;
+            }
+            h1 {
+                color: #2dd2b0;
+            }
+            a {
+                color: #2dd2b0;
+                text-decoration: none;
+            }
+            a:hover {
+                color: #FFF;
+            }
         </style>
     </head>
     <body>
@@ -79,9 +94,13 @@
         </div>
         <div id="top">
             <img src="logo.png" alt="Haklyne Development Logo" id="logo" />
-            <span id="name">Haklyne<br>Development</span>
+            <span id="name">About</span>
         </div>
-        
+        <div class="content">
+            <h1>About Haklyne Development</h1>
+            <p id="paragraph">Haklyne Development is small group of developers devoted to creating fun, useful, and beautiful software projects and solutions. We specialize in web applications, but dabble in a bit of everything. Our team consistsof primarily hobbyist developers, but we are always looking to expand our team with new talent. If you are interested in joining our team, please visit our <a href="contact.html">Contact</a> page.</p>
+            <br>
+        </div>
     </body>
     <script>
         document.addEventListener("DOMContentLoaded", function() {
